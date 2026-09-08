@@ -22,7 +22,7 @@ public abstract  class Animal {
     }
 
     public void ensucierse(){
-        
+
     }
 
     //atributos mínimos:  nombre, especie, hambre, salud, higiene, .
