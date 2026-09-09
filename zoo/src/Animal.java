@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public abstract  class Animal {
     private String nombre;
     private String especie;
@@ -13,16 +15,34 @@ public abstract  class Animal {
         this.salud = salud;
     }
 
-    public void comer(){
-
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "nombre='" + nombre + '\'' +
+                ", especie='" + especie + '\'' +
+                ", hambre='" + hambre + '\'' +
+                ", salud='" + salud + '\'' +
+                ", higiene='" + higiene + '\'' ;
     }
 
-    public void enfermarse(){
 
+
+    public abstract String comer();
+
+    public abstract String enfermarse();
+
+    public abstract String ensucierse();
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return Objects.equals(nombre, animal.nombre) && Objects.equals(especie, animal.especie) && Objects.equals(hambre, animal.hambre) && Objects.equals(salud, animal.salud) && Objects.equals(higiene, animal.higiene);
     }
 
-    public void ensucierse(){
-        
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, especie, hambre, salud, higiene);
     }
 
     //atributos mínimos:  nombre, especie, hambre, salud, higiene, .
