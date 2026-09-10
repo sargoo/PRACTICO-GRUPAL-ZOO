@@ -1,16 +1,16 @@
 import java.util.Objects;
+import java.util.UUID;
 
 public abstract class Persona {
     private String nombre;
     private String dni;
-    private int legajo;
-    private double Salario;
+    private int legajo = UUID.randomUUID().hashCode();
+    private double salario;
 
-    public Persona(String nombre, String dni, double salario, int legajo) {
+    public Persona(String nombre, String dni, double salario) {
         this.nombre = nombre;
         this.dni = dni;
-        Salario = salario;
-        this.legajo = legajo;
+        this.salario = salario;
     }
 
     @Override
@@ -19,19 +19,19 @@ public abstract class Persona {
                 "nombre='" + nombre + '\'' +
                 ", dni='" + dni + '\'' +
                 ", legajo=" + legajo +
-                ", Salario=" + Salario;
+                ", Salario=" + salario;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Persona persona = (Persona) o;
-        return legajo == persona.legajo && Double.compare(Salario, persona.Salario) == 0 && Objects.equals(nombre, persona.nombre) && Objects.equals(dni, persona.dni);
+        return legajo == persona.legajo && Double.compare(salario, persona.salario) == 0 && Objects.equals(nombre, persona.nombre) && Objects.equals(dni, persona.dni);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, dni, legajo, Salario);
+        return Objects.hash(nombre, dni, legajo, salario);
     }
 
     public String getNombre() {
@@ -59,10 +59,10 @@ public abstract class Persona {
     }
 
     public double getSalario() {
-        return Salario;
+        return salario;
     }
 
     public void setSalario(double salario) {
-        Salario = salario;
+        salario = salario;
     }
 }

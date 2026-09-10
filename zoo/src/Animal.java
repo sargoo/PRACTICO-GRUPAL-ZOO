@@ -13,16 +13,16 @@ public abstract  class Animal {
         this.salud = salud;
     }
 
-    public void comer(){
-
+    public String comer(){
+            return "Comiendo";
     }
 
-    public void enfermarse(){
-
+    public String enfermarse(){
+        return "enfermo";
     }
 
-    public void ensucierse(){
-
+    public String ensucierse(){
+        return "sucio";
     }
 
     //atributos mínimos:  nombre, especie, hambre, salud, higiene, .
