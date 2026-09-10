@@ -3,11 +3,11 @@ public class Reptil extends Animal{
     private boolean camina;
     private Tipo_Animal tipo;
 
-    public Reptil(String nombre, String especie, String hambre, String higiene, String salud, boolean venenoso, boolean camina) {
-        super(nombre, especie, hambre, higiene, salud);
-        this.Venenoso = venenoso;
+    public Reptil(String nombre, boolean hambre, boolean higiene, boolean salud, Tipo_Animal tipoAnimal, boolean venenoso, boolean camina) {
+        super(nombre, hambre, higiene, salud, tipoAnimal);
+        Venenoso = venenoso;
         this.camina = camina;
-        this.tipo = tipo.REPTIL;
+
     }
 
     @Override

@@ -12,7 +12,7 @@ public class Cuidador  extends  Persona{
         this.t = t;
     }
 
-    public String Alimentar(){
+    public String alimentar(){
         return "Alimentando animal...";
     };
 

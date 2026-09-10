@@ -2,9 +2,8 @@ public class Mamifero extends Animal{
     private Tipo_Animal tipo;
     private Tipo_Pelaje pelaje;
 
-    public Mamifero(String nombre, String especie, String hambre, String higiene, String salud,  Tipo_Pelaje pelaje) {
-        super(nombre, especie, hambre, higiene, salud);
-        this.tipo = tipo.MAMIFERO;
+    public Mamifero(String nombre, boolean hambre, boolean higiene, boolean salud, Tipo_Animal tipoAnimal, Tipo_Pelaje pelaje) {
+        super(nombre, hambre, higiene, salud, tipoAnimal);
         this.pelaje = pelaje;
     }
 

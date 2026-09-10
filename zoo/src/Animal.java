@@ -1,16 +1,16 @@
 public abstract  class Animal {
     private String nombre;
-    private String especie;
-    private String hambre;
-    private String salud;
-    private String higiene;
+    private boolean hambre ;
+    private boolean salud;
+    private boolean higiene;
+    private Tipo_Animal tipoAnimal;
 
-    public Animal(String nombre, String especie, String hambre, String higiene, String salud) {
+    public Animal(String nombre, boolean hambre, boolean higiene, boolean salud, Tipo_Animal tipoAnimal) {
         this.nombre = nombre;
-        this.especie = especie;
-        this.hambre = hambre;
-        this.higiene = higiene;
-        this.salud = salud;
+        this.hambre = false;
+        this.higiene = false;
+        this.salud = false;
+        this.tipoAnimal = tipoAnimal;
     }
 
     public String comer(){
@@ -25,7 +25,39 @@ public abstract  class Animal {
         return "sucio";
     }
 
-    //atributos mínimos:  nombre, especie, hambre, salud, higiene, .
-    //Métodos mínimos: comer(), enfermarse(), ensuciarse().
+    public String getNombre() {
+        return nombre;
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public boolean getHambre() {
+        return hambre;
+    }
+
+    public void setHambre(boolean hambre) {
+        this.hambre = hambre;
+    }
+
+    public boolean getSalud() {
+        return salud;
+    }
+
+    public void setSalud(boolean salud) {
+        this.salud = salud;
+    }
+
+    public boolean getHigiene() {
+        return higiene;
+    }
+
+    public void setHigiene(boolean higiene) {
+        this.higiene = higiene;
+    }
+
+    public Tipo_Animal getTipoAnimal() {
+        return tipoAnimal;
+    }
 }
